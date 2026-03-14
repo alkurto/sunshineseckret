@@ -24,7 +24,7 @@ margin-bottom:40px;
 text-align:center;
 }
 
-#result img{
+#result img, #result video{
 max-width:400px;
 }
 
@@ -96,9 +96,14 @@ else if(value == "clol"){
     result.innerHTML = '<img src="special.png">';
 }
 
-// команда "miramistin" — текст
+// команда "miramistin" — теперь видео bibizan.mp4
 else if(value == "miramistin"){
-    result.innerHTML = "тут могла быть очень крутая обезьянка но её тут нет";
+    result.innerHTML = `
+      <video controls autoplay>
+        <source src="bibizan.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+      </video>
+    `;
 }
 
 // новые команды с картинками
@@ -117,7 +122,7 @@ else if(value == "зеноидка резиновая плитка"){
     result.innerHTML = "нн";
 }
 
-// новая команда "4 way" — текст RUN!!!
+// команда "4 way" — текст RUN!!!
 else if(value == "4 way"){
     result.innerHTML = "RUN!!!";
 }
