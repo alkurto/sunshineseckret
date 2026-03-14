@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 
 <head>
@@ -8,41 +8,54 @@
 <style>
 
 body{
-background:black;
-color:white;
-font-family:Arial;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-flex-direction:column;
+  background:black;
+  color:white;
+  font-family:Arial;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  flex-direction:column;
+  position: relative;
 }
 
 #result{
-font-size:40px;
-margin-bottom:40px;
-text-align:center;
+  font-size:40px;
+  margin-bottom:40px;
+  text-align:center;
 }
 
 #result img, #result video{
-max-width:400px;
+  max-width:400px;
 }
 
 input{
-width:350px;
-padding:15px;
-font-size:20px;
-text-align:center;
-border:2px solid white;
-background:black;
-color:white;
+  width:350px;
+  padding:15px;
+  font-size:20px;
+  text-align:center;
+  border:2px solid white;
+  background:black;
+  color:white;
 }
 
 button{
-margin-top:15px;
-padding:10px 25px;
-font-size:18px;
-cursor:pointer;
+  margin-top:15px;
+  padding:10px 25px;
+  font-size:18px;
+  cursor:pointer;
+}
+
+/* невидимая кнопка в правом верхнем углу */
+#secretButton{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 </style>
@@ -56,81 +69,85 @@ cursor:pointer;
 <input id="text" placeholder="enter phrase">
 <button onclick="check()">send</button>
 
+<!-- невидимая кнопка -->
+<button id="secretButton" onclick="showFans()"></button>
+
 <script>
 
 function check(){
 
-let value = document.getElementById("text").value.toLowerCase();
-let result = document.getElementById("result");
+  let value = document.getElementById("text").value.toLowerCase();
+  let result = document.getElementById("result");
 
-if(value == "sunshine valley"){
-    result.innerHTML = "What the fuck do you want?";
-}
+  if(value == "sunshine valley"){
+      result.innerHTML = "What the fuck do you want?";
+  }
 
-else if(value == "summer"){
-    result.innerHTML = "very good but what do you want?";
-}
+  else if(value == "summer"){
+      result.innerHTML = "very good but what do you want?";
+  }
 
-else if(value == "you bad"){
-    result.innerHTML = "no/;";
-}
+  else if(value == "you bad"){
+      result.innerHTML = "no/;";
+  }
 
-else if(value == "67"){
-    result.innerHTML = "stupid boy";
-}
+  else if(value == "67"){
+      result.innerHTML = "stupid boy";
+  }
 
-else if(value == "im good"){
-    result.innerHTML = "ziptobibkibab ^w^";
-}
+  else if(value == "im good"){
+      result.innerHTML = "ziptobibkibab ^w^";
+  }
 
-else if(value == "fanmade"){
-    result.innerHTML = '<img src="fanmade.png">';
-}
+  else if(value == "fanmade"){
+      result.innerHTML = '<img src="fanmade.png">';
+  }
 
-else if(value == "клоун"){
-    result.innerHTML = '<img src="clown.png">';
-}
+  else if(value == "клоун"){
+      result.innerHTML = '<img src="clown.png">';
+  }
 
-// команда "clol"
-else if(value == "clol"){
-    result.innerHTML = '<img src="special.png">';
-}
+  else if(value == "clol"){
+      result.innerHTML = '<img src="special.png">';
+  }
 
-// команда "miramistin" — теперь видео bibizan.mp4
-else if(value == "miramistin"){
-    result.innerHTML = `
-      <video controls autoplay>
-        <source src="bibizan.mp4" type="video/mp4">
-        Ваш браузер не поддерживает видео.
-      </video>
-    `;
-}
+  else if(value == "miramistin"){
+      result.innerHTML = `
+        <video controls autoplay>
+          <source src="bibizan.mp4" type="video/mp4">
+          Ваш браузер не поддерживает видео.
+        </video>
+      `;
+  }
 
-// новые команды с картинками
-else if(value == "windy31"){
-    result.innerHTML = '<img src="windy31.png">';
-}
-else if(value == "paiper"){
-    result.innerHTML = '<img src="vera.png">';
-}
-else if(value == "vera"){
-    result.innerHTML = '<img src="paiper.png">';
-}
+  else if(value == "windy31"){
+      result.innerHTML = '<img src="windy31.png">';
+  }
+  else if(value == "paiper"){
+      result.innerHTML = '<img src="vera.png">';
+  }
+  else if(value == "vera"){
+      result.innerHTML = '<img src="paiper.png">';
+  }
 
-// новая команда с текстом "нн"
-else if(value == "зеноидка резиновая плитка"){
-    result.innerHTML = "idi nahui";
-}
+  else if(value == "зеноидка резиновая плитка"){
+      result.innerHTML = "idi nahui";
+  }
 
-// команда "4 way" — текст RUN!!!
-else if(value == "4 way"){
-    result.innerHTML = "RUN!!!";
-}
+  else if(value == "4 way"){
+      result.innerHTML = "RUN!!!";
+  }
 
-else{
-    result.innerHTML = "...";
+  else{
+      result.innerHTML = "...";
+  }
+
 }
 
+// функция для секретной кнопки
+function showFans(){
+  let result = document.getElementById("result");
+  result.innerHTML = "we love our fans";
 }
 
 </script>
